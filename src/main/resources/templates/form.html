@@ -24,6 +24,26 @@
                class="form-control" >
         <span th:if="${#fields.hasErrors('gameTitle')}" th:text="${#fields.errors('gameTitle')[0]}" class="text-danger"></span>
     </div>
+    <div class="form-group">
+        <label>Market price: </label>
+        <input type="number"
+               class="form-control" >
+        <span th:if="${#fields.hasErrors('marketPrice')}" th:text="${#fields.errors('marketPrice')[0]}" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Drop date: </label>
+        <input type="date"
+               class="form-control" th:text="${#temporals.format(dropDate, 'dd/MM/yyyy')}">
+        <span th:if="${#fields.hasErrors('marketPrice')}" th:text="${#fields.errors('marketPrice')[0]}" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Market price: </label>
+        <select class="form-control" th:field="*{isTradeable}">
+            <option value="true">tradeable</option>
+            <option value="false">not tradeable</option>
+        </select>
+        <span th:if="${#fields.hasErrors('marketPrice')}" th:text="${#fields.errors('marketPrice')[0]}" class="text-danger"></span>
+    </div>
 </form>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
